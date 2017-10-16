@@ -16,7 +16,7 @@ def average(array):
 
 #load png image and convert into greyscale
 def load_image(imagename):
-    filename = 'C:\\Users\\janve_000\\Desktop\\TicTacToe\\Pictures\\'+imagename+'.png'
+    filename = 'Pictures/'+imagename+'.png'
     ttt_gray = io.imread(filename,True)
     return ttt_gray
 

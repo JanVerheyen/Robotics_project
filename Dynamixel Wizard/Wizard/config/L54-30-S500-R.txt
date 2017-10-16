@@ -1,0 +1,113 @@
+======================================================
+             L54-30-S500-R Version / 26
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * Communication performance was improved.
+
+>>> Bug fixes: <<<
+
+    * None.
+
+
+======================================================
+             L54-30-S500-R Version / 25
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * None.
+
+>>> Bug fixes: <<<
+
+    * Temperature calculation bug fixed.
+    * Position limit parameter bug fixed.
+
+
+======================================================
+             L54-30-S500-R Version / 24
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * Position P Gain(32 -> 150), 
+    * Velocity P Gain(196 -> 256)
+
+>>> Bug fixes: <<<
+
+    * None.
+
+
+======================================================
+             L54-30-S500-R Version / 23
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * None.
+
+>>> Bug fixes: <<<
+
+    * EEPROM bug fixed.
+    * Overload shutdown bug fixed.
+    * Rx/Tx switching bug fixed.
+
+
+======================================================
+             L54-30-S500-R Version / 22
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * None.
+
+>>> Bug fixes: <<<
+
+    * Torque Limit bug fixed.
+
+
+======================================================
+             L54-30-S500-R Version / 21
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * None.
+
+>>> Bug fixes: <<<
+
+    * Packet overflow bug fixed.
+    * Error bit bug fixed.
+    * LED bug fixed.
+
+
+======================================================
+             L54-30-S500-R Version / 20
+======================================================
+
+>>> First Released: <<<

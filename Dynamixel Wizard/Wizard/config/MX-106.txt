@@ -1,0 +1,130 @@
+======================================================
+              MX-106 Version / 39
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * None.
+
+>>> Bug fixes: <<<
+
+    * Protocol process for packet length exception is improved.
+
+
+======================================================
+              MX-106 Version / 38
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * None.
+
+>>> Bug fixes: <<<
+
+    * Feedback data error fixed.
+	* Torque Control Mode bug fixed.
+
+
+======================================================
+              MX-106 Version / 37
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * None.
+
+>>> Bug fixes: <<<
+
+    * Feedback data error fixed.
+    * Acceleration function bug fixed
+
+
+======================================================
+              MX-106 Version / 36
+======================================================
+
+>>> New functionality/features: <<<
+
+    * Multi-turn mode added.
+      * Multi-turn offset function added. (address 20)
+      * Resolution divider function added. (Address 22)
+
+>>> Changes: <<<
+
+    * Overload shutdown time changed.
+
+>>> Bug fixes: <<<
+
+    * None.
+
+
+======================================================
+              MX-106 Version / 33
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * Self calibration algorithm has been changed.
+
+>>> Bug fixes: <<<
+
+    * None.
+
+
+======================================================
+              MX-106 Version / 32
+======================================================
+
+>>> New functionality/features: <<<
+
+    * Profile control algorithm has been added. (Address 73)
+
+>>> Changes: <<<
+
+    * None.
+
+>>> Bug fixes: <<<
+
+    * None.
+
+
+======================================================
+              MX-106 Version / 31
+======================================================
+
+>>> New functionality/features: <<<
+
+    * Torque out mode has been added. (address 70,71,72).
+
+>>> Changes: <<<
+
+    * EEPROM emulation algorithm modified.
+
+>>> Bug fixes: <<<
+
+    * Reverse mode bug fixed.
+    * Overload shutdown recover algorithm fixed.
+      (If users want to turn off the alarm state, the user must write a value to the Torque limit(address 34).)
+
+
+======================================================
+              MX-106 Version / 30
+======================================================
+
+>>> First Released: <<<

@@ -1,0 +1,39 @@
+======================================================
+              IR-Array Version / 18
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * Increased IR sampling frequency.
+
+>>> Bug fixes: <<<
+
+    * None. 
+
+
+======================================================
+              IR-Array Version / 17
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * None.
+
+>>> Bug fixes: <<<
+
+    * Object detect bug fixed. 
+
+
+======================================================
+              IR-Array Version / 16
+======================================================
+
+>>> First Released: <<<
