@@ -2,14 +2,14 @@ import random
 import numpy as np
 
 
-def wincheck(matrix):
+def wincheck(matrix_test):
     saveX = np.zeros((3,3))
     saveO = np.zeros((3,3))
     for i in range(3):
         for j in range(3):
-            if matrix[i][j] == 1:
+            if matrix_test[i][j] == 1:
                 saveX[i][j] = 1
-            if matrix[i][j] == 0:
+            if matrix_test[i][j] == 0:
                 saveO[i][j] = 1
                     
     saveX_hor = np.zeros(3)
@@ -24,17 +24,17 @@ def wincheck(matrix):
             saveX_ver[i] += saveX[j][i]
             saveO_hor[i] += saveO[i][j]
             saveO_ver[i] += saveO[j][i]
-            saveX_diag[0] = saveX[j][j]
-            saveX_diag[1] = saveX[j][2-j]
-            saveO_diag[0] = saveO[j][j]
-            saveO_diag[1] = saveO[j][2-j]
+        saveX_diag[0] += saveX[i][i]
+        saveX_diag[1] += saveX[i][2-i]
+        saveO_diag[0] += saveO[i][i]
+        saveO_diag[1] += saveO[i][2-i]
     
     pc = True
     player = True
     tie = False
     check = 0
     
-    if(saveX_hor[0]+saveO_hor[0])==3 and (saveX_hor[1]+saveO_hor[1])==3 and(saveX_hor[2]+saveO_hor[2])==3:
+    if (saveX_hor[0]+saveO_hor[0]==3 and saveX_hor[1]+saveO_hor[1]==3 and saveX_hor[2]+saveO_hor[2]==3):
         tie = True
     
     for i in range(3):
@@ -45,37 +45,40 @@ def wincheck(matrix):
             player = False
             break
         if saveO_hor[i] == 3:
-            player = False
+            pc = False
             break
         if saveO_ver[i] == 3:
-            player = False
+            pc = False
             break
     for i in range(2):
         if saveX_diag[i] == 3:
             player = False
             break
         if saveO_diag[i] == 3:
-            player = False
+            pc = False
             break
+    
     if player == False:
         check = 1
     if pc == False:
         check = 2
-    if tie == True and player == True and pc == True:
-        check =3
-    
+    if (tie == True and player == True and pc == True):
+        check = 3
+        
     return check
+    
         
         
-def formerinput_pc(matrix,i,j):
-    available = False
-    if matrix[i][j]==5:
+def formerinput_pc(matrix_test,i,j):
+    if matrix_test[i][j]==5:
         available =True
+    else:
+        available = False
     return available
 
 def max_position(array):  
     maximum = 0
-    position = np.zeros(2)
+    position = np.zeros(2,dtype = int)
     for i in range(3):
         for j in range(3):
             if array[i][j] > maximum:
@@ -88,29 +91,29 @@ def max_position(array):
 def move_picker(score,max_loops):
     player = np.zeros((3,3))
     computer = np.zeros((3,3))
-    best = np.zeros(2)
+    best = np.zeros(2,dtype=int)
     for i in range(max_loops):
         if score[i][2] == 1:
             player[score[i][0]][score[i][1]] += 3
-            computer[score[i][0]][score[i][1]] += -1
-            break
+            computer[score[i][0]][score[i][1]] -= 1
         if score[i][2] == 2:
-            player[score[i][0]][score[i][1]] += -1
+            player[score[i][0]][score[i][1]] -= 1
             computer[score[i][0]][score[i][1]] += 3
-            break
         if score[i][2] == 3:
             player[score[i][0]][score[i][1]] += 1
             computer[score[i][0]][score[i][1]] += 1
-            break
     best = max_position(computer)
+    return best
     
 def computer(matrix):
     counter = 0
     max_loops = 10    
-    score = np.empty((max_loops,3))    
-    
+    score = np.zeros((max_loops,3),dtype = int)
+    matrix_test = np.array(([5,5,5],[5,5,5],[5,5,5]))
     while(counter<max_loops):
-        matrix_test = matrix
+        for i in range(3):
+            for j in range(3):
+                matrix_test[i][j] = matrix[i][j]
         winner = 0
         first_time = 0
         while winner == 0:
@@ -124,12 +127,12 @@ def computer(matrix):
                 if first_time == 0:
                     score[counter][0] = i
                     score[counter][1] = j
+            winner = wincheck(matrix_test)
             if winner == 0:
-                available=False
-                while available ==False:
+                available = False
+                while available == False:
                     i = random.randint(0,2)
                     j = random.randint(0,2)
-                    print i
                     available = formerinput_pc(matrix_test,i,j)
                 matrix_test[i][j] = 1
             winner = wincheck(matrix_test)
@@ -140,4 +143,6 @@ def computer(matrix):
     nextmove = move_picker(score,max_loops)
     matrix[nextmove[0]][nextmove[1]] = 0
     print matrix
-            
+    
+matrix = np.array(([5,5,5],[5,5,5],[5,5,5]))    
+computer(matrix)
