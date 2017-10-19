@@ -20,6 +20,14 @@ def load_image(imagename):
     ttt_gray = io.imread(filename,True)
     return ttt_gray
 
+def check_whiteness(array):
+    
+    s = array[0][0]+array[0][-1]+array[-1][0]+array[-1][-1]
+    whiteness = s/4
+    
+    return whiteness
+    
+
 #calculate the pixel-positions of the grid
 def grid_pos(ttt_gray):
     hor_line_pos = []
@@ -29,65 +37,82 @@ def grid_pos(ttt_gray):
     
     #Get the location of the more black pixels to have a range of the positions of the lines
     for i in range(len(ttt_gray)):
-        if ttt_gray[i][10]<0.8:
+        if ttt_gray[i][270]<0.45:
             hor_line_pos.append(i)
             
     for i in range(len(ttt_gray[0])):
-        if ttt_gray[10][i]<0.8:
+        if ttt_gray[300][i]<0.45:
             ver_line_pos.append(i)
     
     #extremes of the hor and ver lines
     hor_line_lim[1] = hor_line_pos[0]
     hor_line_lim[4] = hor_line_pos[-1]
-    
-    for i in range(1,len(hor_line_pos)-1):
-        if (hor_line_pos[i+1]-hor_line_pos[i])>2:
-            hor_line_lim[2] = hor_line_pos[i] 
-            hor_line_lim[3] = hor_line_pos[i+1]
-    
     ver_line_lim[1] = ver_line_pos[0]
     ver_line_lim[4] = ver_line_pos[-1]
     
+    for i in range(1,len(hor_line_pos)-1):
+        if (hor_line_pos[i+1]-hor_line_pos[i])>5:
+            hor_line_lim[2] = hor_line_pos[i] 
+            hor_line_lim[3] = hor_line_pos[i+1]
+    
     for i in range(1,len(ver_line_pos)-1):
-        if (ver_line_pos[i+1]-ver_line_pos[i])>3:
+        if (ver_line_pos[i+1]-ver_line_pos[i])>5:
             ver_line_lim[2] = ver_line_pos[i] 
             ver_line_lim[3] = ver_line_pos[i+1] 
     
     return hor_line_lim,ver_line_lim
     
 #initialise zones for calculation
+a = 20 #safety margin
+
 def initialise_zones(hor_line_lim,ver_line_lim):
-    zone11 = np.zeros((hor_line_lim[1],ver_line_lim[1]))
-    zone12 = np.zeros((hor_line_lim[1],ver_line_lim[3]-ver_line_lim[2]))
-    zone13 = np.zeros((hor_line_lim[1],len(ttt_gray[0])-ver_line_lim[4]))
-    zone21 = np.zeros((hor_line_lim[3]-hor_line_lim[2],ver_line_lim[1]))
-    zone22 = np.zeros((hor_line_lim[3]-hor_line_lim[2],ver_line_lim[3]-ver_line_lim[2]))
-    zone23 = np.zeros((hor_line_lim[3]-hor_line_lim[2],len(ttt_gray[0])-ver_line_lim[4]))
-    zone31 = np.zeros((len(ttt_gray)-hor_line_lim[4],ver_line_lim[1]))
-    zone32 = np.zeros((len(ttt_gray)-hor_line_lim[4],ver_line_lim[3]-ver_line_lim[2]))
-    zone33 = np.zeros((len(ttt_gray)-hor_line_lim[4],len(ttt_gray[0])-ver_line_lim[4]))
+    zone11 = np.zeros((hor_line_lim[1]-a,ver_line_lim[1]-a))
+    zone12 = np.zeros((hor_line_lim[1]-a,ver_line_lim[3]-ver_line_lim[2]-a))
+    zone13 = np.zeros((hor_line_lim[1]-a,len(ttt_gray[0])-ver_line_lim[4]-a))
+    zone21 = np.zeros((hor_line_lim[3]-hor_line_lim[2]-a,ver_line_lim[1]-a))
+    zone22 = np.zeros((hor_line_lim[3]-hor_line_lim[2]-a,ver_line_lim[3]-ver_line_lim[2]-a))
+    zone23 = np.zeros((hor_line_lim[3]-hor_line_lim[2]-a,len(ttt_gray[0])-ver_line_lim[4]-a))
+    zone31 = np.zeros((len(ttt_gray)-hor_line_lim[4]-a,ver_line_lim[1]-a))
+    zone32 = np.zeros((len(ttt_gray)-hor_line_lim[4]-a,ver_line_lim[3]-ver_line_lim[2]-a))
+    zone33 = np.zeros((len(ttt_gray)-hor_line_lim[4]-a,len(ttt_gray[0])-ver_line_lim[4]-a))
     return zone11,zone12,zone13,zone21,zone22,zone23,zone31,zone32,zone33
 
 def set_zone(zone,x,y,ttt_gray,hor_line_lim,ver_line_lim):
-    for i in range(len(zone)):
-        for j in range(len(zone[0])):
+    for i in range(len(zone)-a):
+        for j in range(len(zone[0])-a):
             zone[i][j] = ttt_gray[i+hor_line_lim[(x-1)*2]][j+ver_line_lim[(y-1)*2]]
     return zone
 
-def write_check(average):
-    write = '0'
-    if average<0.95:
-        write = '1'
-    if average<0.5:
-        print "Oops, something went wrong"
+def write_position(average,text):
+    #filter out previously written values (so you dont check them twice)
+    average_filtered = np.ones((3,3))
+    for i in range(3):
+        for j in range(3):
+            if text[i][j] != 1:
+                average_filtered[i][j] = average[i][j]
+    
+    #search in the array where the minimum is and return index            
+    minlist = []
+    min_index = np.zeros(3)
+    
+    for i in range(3):
+        min_index[i] = np.argmin(average)
+        minlist.append(np.amin(average,axis=i)) 
         
-    return write
+    x = np.argmin(minlist)
+    y = min_index[x]
+    print "The opponent put an x on position",x+1,y+1
+    
+    pos = text
+    pos[x][y] = 1
+    
+    return pos
             
          
 #---------------------------------MAIN PROGRAM---------------------------    
 
 #get greyscale array of picture
-image_name = 'tic-tac-toe'
+image_name = 'Test0_v2'
 ttt_gray = load_image(image_name)
 
 #get positions of the grid
@@ -120,25 +145,13 @@ zone_average[2][0] = average(zone31)
 zone_average[2][1] = average(zone32)
 zone_average[2][2] = average(zone33)
 
-#convert averages into written or empty entries
-pos = np.empty((3,3),dtype = int)
-for i in range(3):
-    for j in range(3):
-        pos[i][j] = write_check(zone_average[i][j])
-        
 #read the previous move
 text = np.genfromtxt("positions.txt",dtype = int,delimiter = ",")
 
-#compare with the present move
-for i in range(3):
-    for j in range(3):
-        if pos[i][j]-text[i][j]!=0:
-            print "The opponent put an x on position",i+1,j+1
-            
+#convert averages into written or empty entries
+pos = np.empty((3,3),dtype = int)
+pos = write_position(zone_average,text)
+
 #save the present move to a textfile
 np.savetxt("positions.txt",pos,delimiter = ",")
-
-
-
-
 
