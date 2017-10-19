@@ -107,7 +107,7 @@ def move_picker(score,max_loops):
     
 def computer(matrix):
     counter = 0
-    max_loops = 10    
+    max_loops = 1000    
     score = np.zeros((max_loops,3),dtype = int)
     matrix_test = np.array(([5,5,5],[5,5,5],[5,5,5]))
     while(counter<max_loops):
