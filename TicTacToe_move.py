@@ -1,18 +1,15 @@
 from skimage import io
 import numpy as np
-
-def average(array):
-    rows = len(array)
-    columns = len(array[0])
-    s = 0
-    total = rows*columns
     
-    for i in range(rows):
-        for j in range(columns):
-            s += array[i][j]
+def contrast(array):
+    difference = np.ones((3,3))
+    for i in range(3):
+        for j in range(3):
+            array[i][j] = np.sort(array[i][j],axis=None)
+            c = len(array[i][j])/100
+            difference[i][j] = sum(array[i][j][-c:-1])-sum(array[i][j][1:c])     
+    return difference
     
-    average = s/total
-    return average
 
 #load png image and convert into greyscale
 def load_image(imagename):
@@ -21,13 +18,10 @@ def load_image(imagename):
     return ttt_gray
 
 def check_whiteness(array):
-    
     s = array[0][0]+array[0][-1]+array[-1][0]+array[-1][-1]
     whiteness = s/4
-    
     return whiteness
     
-
 #calculate the pixel-positions of the grid
 def grid_pos(ttt_gray):
     hor_line_pos = []
@@ -37,11 +31,11 @@ def grid_pos(ttt_gray):
     
     #Get the location of the more black pixels to have a range of the positions of the lines
     for i in range(len(ttt_gray)):
-        if ttt_gray[i][270]<0.45:
+        if ttt_gray[i][len(ttt_gray[0])/30]<0.45:
             hor_line_pos.append(i)
             
     for i in range(len(ttt_gray[0])):
-        if ttt_gray[300][i]<0.45:
+        if ttt_gray[len(ttt_gray)/30][i]<0.45:
             ver_line_pos.append(i)
     
     #extremes of the hor and ver lines
@@ -63,25 +57,26 @@ def grid_pos(ttt_gray):
     return hor_line_lim,ver_line_lim
     
 #initialise zones for calculation
-a = 20 #safety margin
-
+    
 def initialise_zones(hor_line_lim,ver_line_lim):
-    zone11 = np.zeros((hor_line_lim[1]-a,ver_line_lim[1]-a))
-    zone12 = np.zeros((hor_line_lim[1]-a,ver_line_lim[3]-ver_line_lim[2]-a))
-    zone13 = np.zeros((hor_line_lim[1]-a,len(ttt_gray[0])-ver_line_lim[4]-a))
-    zone21 = np.zeros((hor_line_lim[3]-hor_line_lim[2]-a,ver_line_lim[1]-a))
-    zone22 = np.zeros((hor_line_lim[3]-hor_line_lim[2]-a,ver_line_lim[3]-ver_line_lim[2]-a))
-    zone23 = np.zeros((hor_line_lim[3]-hor_line_lim[2]-a,len(ttt_gray[0])-ver_line_lim[4]-a))
-    zone31 = np.zeros((len(ttt_gray)-hor_line_lim[4]-a,ver_line_lim[1]-a))
-    zone32 = np.zeros((len(ttt_gray)-hor_line_lim[4]-a,ver_line_lim[3]-ver_line_lim[2]-a))
-    zone33 = np.zeros((len(ttt_gray)-hor_line_lim[4]-a,len(ttt_gray[0])-ver_line_lim[4]-a))
-    return zone11,zone12,zone13,zone21,zone22,zone23,zone31,zone32,zone33
-
-def set_zone(zone,x,y,ttt_gray,hor_line_lim,ver_line_lim):
-    for i in range(len(zone)-a):
-        for j in range(len(zone[0])-a):
-            zone[i][j] = ttt_gray[i+hor_line_lim[(x-1)*2]][j+ver_line_lim[(y-1)*2]]
-    return zone
+    zone = np.zeros((3,3),dtype=object)
+    zone[0][0] = np.ones((hor_line_lim[1]-a,ver_line_lim[1]-a))
+    zone[0][1] = np.ones((hor_line_lim[1]-a,ver_line_lim[3]-ver_line_lim[2]-a))
+    zone[0][2] = np.ones((hor_line_lim[1]-a,len(ttt_gray[0])-ver_line_lim[4]-a))
+    zone[1][0] = np.ones((hor_line_lim[3]-hor_line_lim[2]-a,ver_line_lim[1]-a))
+    zone[1][1] = np.ones((hor_line_lim[3]-hor_line_lim[2]-a,ver_line_lim[3]-ver_line_lim[2]-a))
+    zone[1][2] = np.ones((hor_line_lim[3]-hor_line_lim[2]-a,len(ttt_gray[0])-ver_line_lim[4]-a))
+    zone[2][0] = np.ones((len(ttt_gray)-hor_line_lim[4]-a,ver_line_lim[1]-a))
+    zone[2][1] = np.ones((len(ttt_gray)-hor_line_lim[4]-a,ver_line_lim[3]-ver_line_lim[2]-a))
+    zone[2][2] = np.ones((len(ttt_gray)-hor_line_lim[4]-a,len(ttt_gray[0])-ver_line_lim[4]-a))
+    
+    for x in range(3):
+        for y in range(3):
+            dim = np.shape(zone[x][y])
+            for i in range(dim[0]-a):
+                for j in range(dim[1]-a):
+                    zone[x][y][i][j] = ttt_gray[i+hor_line_lim[x*2]][j+ver_line_lim[y*2]]
+    return zone      
 
 def write_position(average,text):
     #filter out previously written values (so you dont check them twice)
@@ -90,18 +85,11 @@ def write_position(average,text):
         for j in range(3):
             if text[i][j] != 1:
                 average_filtered[i][j] = average[i][j]
-    
-    #search in the array where the minimum is and return index            
-    minlist = []
-    min_index = np.zeros(3)
-    
-    for i in range(3):
-        min_index[i] = np.argmin(average)
-        minlist.append(np.amin(average,axis=i)) 
         
-    x = np.argmin(minlist)
-    y = min_index[x]
-    print "The opponent put an x on position",x+1,y+1
+    #search in the array where the minimum is and return index 
+    index = average.argmax()
+    x = index/3
+    y = index%3  
     
     pos = text
     pos[x][y] = 1
@@ -110,48 +98,27 @@ def write_position(average,text):
             
          
 #---------------------------------MAIN PROGRAM---------------------------    
-
 #get greyscale array of picture
-image_name = 'Test0_v2'
+image_name = 'tic-tac-toe'
 ttt_gray = load_image(image_name)
+a = len(ttt_gray)/30  #safety margin
 
 #get positions of the grid
 hor_line_lim,ver_line_lim = grid_pos(ttt_gray)
 
-#define the zones for furhter calculation
-zone11,zone12,zone13,zone21,zone22,zone23,zone31,zone32,zone33 = initialise_zones(hor_line_lim,ver_line_lim)
+#define and get the right vlaues for the zones
+zone = initialise_zones(hor_line_lim,ver_line_lim)
 
-zone11 = set_zone(zone11,1,1,ttt_gray,hor_line_lim,ver_line_lim)
-zone12 = set_zone(zone12,1,2,ttt_gray,hor_line_lim,ver_line_lim)
-zone13 = set_zone(zone13,1,3,ttt_gray,hor_line_lim,ver_line_lim)
-zone21 = set_zone(zone21,2,1,ttt_gray,hor_line_lim,ver_line_lim)
-zone22 = set_zone(zone22,2,2,ttt_gray,hor_line_lim,ver_line_lim)
-zone23 = set_zone(zone23,2,3,ttt_gray,hor_line_lim,ver_line_lim)
-zone31 = set_zone(zone31,3,1,ttt_gray,hor_line_lim,ver_line_lim)
-zone32 = set_zone(zone32,3,2,ttt_gray,hor_line_lim,ver_line_lim)
-zone33 = set_zone(zone33,3,3,ttt_gray,hor_line_lim,ver_line_lim)
-
-
-#get the greyscale averages of the different zones
-zone_average = np.empty((3,3))
-
-zone_average[0][0] = average(zone11)
-zone_average[0][1] = average(zone12)
-zone_average[0][2] = average(zone13)
-zone_average[1][0] = average(zone21)
-zone_average[1][1] = average(zone22)
-zone_average[1][2] = average(zone23)
-zone_average[2][0] = average(zone31)
-zone_average[2][1] = average(zone32)
-zone_average[2][2] = average(zone33)
+#get the contrast of the different zones
+zone_contrast = np.ones((3,3))
+zone_contrast = contrast(zone)
 
 #read the previous move
 text = np.genfromtxt("positions.txt",dtype = int,delimiter = ",")
 
 #convert averages into written or empty entries
 pos = np.empty((3,3),dtype = int)
-pos = write_position(zone_average,text)
+pos = write_position(zone_contrast,text)
 
 #save the present move to a textfile
 np.savetxt("positions.txt",pos,delimiter = ",")
-
