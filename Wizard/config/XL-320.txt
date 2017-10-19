@@ -1,0 +1,41 @@
+======================================================
+                XL-320 Version / 27
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * None.
+
+>>> Bug fixes: <<<
+
+    * Data range error bug fixed.
+
+
+======================================================
+                XL-320 Version / 26
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * None.
+
+>>> Bug fixes: <<<
+
+    * Protocol buffer overflow bug fixed.
+    * Return Level bug fixed.
+    * Reboot, Factory reset bug fixed.
+
+
+======================================================
+                XL-320 Version / 24
+======================================================
+
+>>> First Released: <<<

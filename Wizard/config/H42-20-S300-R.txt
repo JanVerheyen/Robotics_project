@@ -1,0 +1,79 @@
+======================================================
+             H54-200-S500-R Version / 23
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * None.
+
+>>> Bug fixes: <<<
+
+    * EEPROM bug fixed.
+    * Overload shutdown bug fixed.
+    * Rx/Tx switching bug fixed.
+
+
+======================================================
+             H54-200-S500-R Version / 22
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * None.
+
+>>> Bug fixes: <<<
+
+    * Torque Limit bug fixed.
+
+
+======================================================
+             H54-200-S500-R Version / 21
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * None.
+
+>>> Bug fixes: <<<
+
+    * Packet overflow bug fixed.
+    * Error bit bug fixed.
+    * LED bug fixed.
+
+
+======================================================
+             H42-20-S300-R Version / 18
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * Init value of control table has changed.
+
+>>> Bug fixes: <<<
+
+    * Reboot, Reset instruction bug fixed.
+    * Goal torque bug fixed.
+    * Velocity control algorithm bug fixed.
+
+
+======================================================
+             H42-20-S300-R Version / 17
+======================================================
+
+>>> First Released: <<<
