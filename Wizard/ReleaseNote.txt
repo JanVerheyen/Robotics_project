@@ -1,4 +1,253 @@
 =====================================================
+          Dynamixel Wizard Version / 1.0.19.21
+=====================================================
+
+>>> New functionality/features: <<<
+    * None.
+
+>>> Changes: <<<
+    * None
+
+>>> Bug fixes: <<<
+    * The F/W below has been replaced. 26 version users please recover it.
+
+      L54-30-S400-R (v26)
+      L54-50-S290-R (v26)
+=====================================================
+          Dynamixel Wizard Version / 1.0.19.20
+=====================================================
+
+>>> New functionality/features: <<<
+    * None.
+
+>>> Changes: <<<
+    * None
+
+>>> Bug fixes: <<<
+    * The F/W below has been replaced. 26 version users please recover it.
+
+      L54-30-S500-R (v26)
+      L54-50-S500-R (v26)
+=====================================================
+          Dynamixel Wizard Version / 1.0.19.19
+=====================================================
+
+>>> New functionality/features: <<<
+    * None.
+
+>>> Changes: <<<
+    * firmware has been updated. 
+
+    H42-20-S300-R (v25)
+    H54-100-S500-R (v25)
+    H54-200-B500-R (v25)
+    H54-200-S500-R (v25)
+
+    L42-10-S300-R (v25)
+    L54-30-S400-R (v26)
+    L54-30-S500-R (v26)
+    L54-50-S290-R (v26)
+    L54-50-S500-R (v26)
+
+    M42-10-S260-R (v25)
+    M54-40-S250-R (v25)
+    M54-60-S250-R (v25)
+
+>>> Bug fixes: <<<
+    * None.
+
+=====================================================
+          Dynamixel Wizard Version / 1.0.19.18
+=====================================================
+
+>>> New functionality/features: <<<
+    * None.
+
+>>> Changes: <<<
+    * firmware has been updated. 
+      MX-12W, MX-28, MX-64, MX-106
+
+>>> Bug fixes: <<<
+    * None.
+
+=====================================================
+          Dynamixel Wizard Version / 1.0.19.17
+=====================================================
+
+>>> New functionality/features: <<<
+    * None.
+
+>>> Changes: <<<
+    * firmware has been updated.
+
+    H42-20-S300-R (v24)
+    H54-100-S500-R (v24)
+    H54-200-B500-R (v24)
+    H54-200-S500-R (v24)
+
+    L42-10-S300-R (v24)
+    L54-30-S400-R (v25)
+    L54-30-S500-R (v25)
+    L54-50-S290-R (v25)
+    L54-50-S500-R (v25)
+
+    M42-10-S260-R (v24)
+    M54-40-S250-R (v24)
+    M54-60-S250-R (v24)
+
+>>> Bug fixes: <<<
+    * None.
+
+=====================================================
+          Dynamixel Wizard Version / 1.0.19.16
+=====================================================
+
+>>> New functionality/features: <<<
+    * None.
+
+>>> Changes: <<<
+    * XL-320 firmware has been updated.
+
+>>> Bug fixes: <<<
+    * None.
+
+=====================================================
+          Dynamixel Wizard Version / 1.0.19.15
+=====================================================
+
+>>> New functionality/features: <<<
+    * None.
+
+>>> Changes: <<<
+    * MX-12W firmware has been updated.
+
+>>> Bug fixes: <<<
+    * None.
+
+=====================================================
+          Dynamixel Wizard Version / 1.0.19.14
+=====================================================
+
+>>> New functionality/features: <<<
+    * None.
+
+>>> Changes: <<<
+    * Changed : L54-30-S400 : 
+      Position P Gain(32 -> 200), 
+      Velocity P Gain(256 -> 412)
+
+    * Changed : L54-30-S500 : 
+      Position P Gain(32 -> 150), 
+      Velocity P Gain(196 -> 256)
+
+    * Changed : L54-50-S500 : 
+      Position P Gain(32 -> 200), 
+      Velocity P Gain(144 -> 256)
+
+    * Changed : L54-50-S290 : 
+      Position P Gain(32 -> 250), 
+      Velocity P Gain(256 -> 412)
+
+>>> Bug fixes: <<<
+    * None.
+
+=====================================================
+          Dynamixel Wizard Version / 1.0.19.13
+=====================================================
+
+>>> New functionality/features: <<<
+    * None.
+
+>>> Changes: <<<
+    * XL-320 firmware has been updated.
+
+>>> Bug fixes: <<<
+    * None.
+
+=====================================================
+          Dynamixel Wizard Version / 1.0.19.12
+=====================================================
+
+>>> New functionality/features: <<<
+    * None.
+
+>>> Changes: <<<
+    * None.
+
+>>> Bug fixes: <<<
+    * XL-320. Firmware data rollback. (V28->V27)
+
+=====================================================
+          Dynamixel Wizard Version / 1.0.19.11
+=====================================================
+
+>>> New functionality/features: <<<
+    * None.
+
+>>> Changes: <<<
+    * None.
+
+>>> Bug fixes: <<<
+    * MX-28, 12W Feedback data error fixed.
+    * MX-64, 106 Feedback data error fixed.
+    * MX-64, 106 Torque Control Mode bug fixed.
+
+=====================================================
+          Dynamixel Wizard Version / 1.0.19.10
+=====================================================
+
+>>> New functionality/features: <<<
+    * None.
+
+>>> Changes: <<<
+    * AX-18A firmware has been updated.
+
+>>> Bug fixes: <<<
+    * None.
+
+=====================================================
+          Dynamixel Wizard Version / 1.0.19.9
+=====================================================
+
+>>> New functionality/features: <<<
+    * None.
+
+>>> Changes: <<<
+    * MX-Series firmware has been updated.
+
+>>> Bug fixes: <<<
+    * None.
+        
+
+=====================================================
+          Dynamixel Wizard Version / 1.0.19.8
+=====================================================
+
+>>> New functionality/features: <<<
+    * None.
+
+>>> Changes: <<<
+    * XL-320 firmware has been updated.
+
+>>> Bug fixes: <<<
+    * None.
+        
+
+=====================================================
+          Dynamixel Wizard Version / 1.0.19.7
+=====================================================
+
+>>> New functionality/features: <<<
+    * None.
+
+>>> Changes: <<<
+    * OpenCM9.04 firmware has been updated.
+
+>>> Bug fixes: <<<
+    * None.
+        
+
+=====================================================
           Dynamixel Wizard Version / 1.0.19.6
 =====================================================
 
@@ -6,9 +255,9 @@
     * None.
 
 >>> Changes: <<<
-    * DXL Pro (All) firmware updated.
-    * OpenCM9.04 firmware updated.
-    * Enhanced stability of firmware updates.
+    * DXL Pro (All) firmware has been updated.
+    * OpenCM9.04 firmware has been updated.
+    * Enhanced stability of firmware update function.
 
 >>> Bug fixes: <<<
     * None.
@@ -22,7 +271,7 @@
     * None.
 
 >>> Changes: <<<
-    * DXL Pro (All) firmware updated.
+    * DXL Pro (All) firmware has been updated.
 
 >>> Bug fixes: <<<
     * None.
@@ -36,7 +285,7 @@
     * None.
 
 >>> Changes: <<<
-    * DXL Pro (All) firmware updated.
+    * DXL Pro (All) firmware has been updated.
     * Support old firmware (some of the functions are different from the latest firmware).
 
 >>> Bug fixes: <<<
@@ -49,7 +298,7 @@
 
 >>> New functionality/features: <<<
     * DXL Pro (L54-30-S500-R, L54-50-S500-R) is added.
-    * DXL Pro (L42-10-S300-R) firmware updated.
+    * DXL Pro (L42-10-S300-R) firmware has been updated.
 
 >>> Changes: <<<
     * None.
@@ -96,7 +345,7 @@
     * None.
 
 >>> Changes: <<<
-    * OpenCM9.04 Firmware updated. (ver 9)
+    * OpenCM9.04 Firmware has been updated. (ver 9)
 
 >>> Bug fixes: <<<
     * Fixed dynamixel search bug (too many unknown devices).
@@ -139,8 +388,8 @@
     * Multi-turn mode added (MX-Series).
 
 >>> Changes: <<<
-    * XL-320 firmware is updated.
-    * MX-Series firmware is updated.
+    * XL-320 firmware has been updated.
+    * MX-Series firmware has been updated.
     * Bluetooth port became available.
 
 >>> Bug fixes: <<<
@@ -170,7 +419,7 @@
 
 >>> Changes: <<<
     * Removed port check routine. (When the port list refreshed)
-    * XL-320 firmware is updated (support 2.0 protocol).
+    * XL-320 firmware has been updated. (support 2.0 protocol).
 
 >>> Bug fixes: <<<
     * Fixed MX baudrate issue.
@@ -187,7 +436,7 @@
     * XL-320 added.
 
 >>> Changes: <<<
-    * Dynamixel Pro (H42-20-S300-R, H54-100-S500-R, H54-200-S500-R, H54-200-B500-R) firmware updated.
+    * Dynamixel Pro (H42-20-S300-R, H54-100-S500-R, H54-200-S500-R, H54-200-B500-R) firmware has been updated.
 
 >>> Bug fixes: <<<
     * Dynamixel 2.0 refresh control table issue fixed.
@@ -218,7 +467,7 @@
     * MX-64 / MX-106 Calibration function added.
 
 >>> Changes: <<<
-    * AX-12W / MX-28 / MX-64 / MX-106 firmware is updated.
+    * AX-12W / MX-28 / MX-64 / MX-106 firmware has been updated.
 
 >>> Bug fixes: <<<
     * Firmware Online Update bug fixed.
@@ -233,7 +482,7 @@
     * None.
 
 >>> Changes: <<<
-    * IR-Array firmware is updated.
+    * IR-Array firmware has been updated.
 
 >>> Bug fixes: <<<
     * None.
@@ -247,7 +496,7 @@
     * French/German/Spanish language support.
 
 >>> Changes: <<<
-    * MX-28 / MX-64 / MX-106 firmware is updated.
+    * MX-28 / MX-64 / MX-106 firmware has been updated.
 
 >>> Bug fixes: <<<
     * Group moving speed input control modified.
@@ -264,7 +513,7 @@
     * MX-28 calibration function added.
 
 >>> Changes: <<<
-    * IR-Array firmware is updated.
+    * IR-Array firmware has been updated.
 
 >>> Bug fixes: <<<
     * Firmware update check bug fixed.
@@ -279,7 +528,7 @@
     * MX-64 / MX-106 is added.
 
 >>> Changes: <<<
-    * MX-28 firmware is updated.
+    * MX-28 firmware has been updated.
     * Modified to check the firmware version supported.
     * MX-Actuator, P gain and D gain is replaced with each other's addresses.
 

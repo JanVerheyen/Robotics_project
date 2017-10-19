@@ -1,4 +1,56 @@
 ======================================================
+              MX-28 Version / 39
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * None.
+
+>>> Bug fixes: <<<
+
+    * Protocol process for packet length exception is improved.
+
+
+======================================================
+              MX-28 Version / 38
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * None.
+
+>>> Bug fixes: <<<
+
+    * Feedback data error fixed.
+
+
+======================================================
+              MX-28 Version / 37
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * None.
+
+>>> Bug fixes: <<<
+
+    * Feedback data error fixed.
+    * Acceleration function bug fixed
+
+
+======================================================
               MX-28 Version / 36
 ======================================================
 

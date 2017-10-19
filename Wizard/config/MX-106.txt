@@ -1,4 +1,57 @@
 ======================================================
+              MX-106 Version / 39
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * None.
+
+>>> Bug fixes: <<<
+
+    * Protocol process for packet length exception is improved.
+
+
+======================================================
+              MX-106 Version / 38
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * None.
+
+>>> Bug fixes: <<<
+
+    * Feedback data error fixed.
+	* Torque Control Mode bug fixed.
+
+
+======================================================
+              MX-106 Version / 37
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * None.
+
+>>> Bug fixes: <<<
+
+    * Feedback data error fixed.
+    * Acceleration function bug fixed
+
+
+======================================================
               MX-106 Version / 36
 ======================================================
 

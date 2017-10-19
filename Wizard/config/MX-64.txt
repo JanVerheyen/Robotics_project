@@ -1,4 +1,57 @@
 ======================================================
+              MX-64 Version / 39
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * None.
+
+>>> Bug fixes: <<<
+
+    * Protocol process for packet length exception is improved.
+
+
+======================================================
+              MX-64 Version / 38
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * None.
+
+>>> Bug fixes: <<<
+
+    * Feedback data error fixed.
+    * Torque Control Mode bug fixed.
+
+
+======================================================
+              MX-64 Version / 37
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * None.
+
+>>> Bug fixes: <<<
+
+    * Feedback data error fixed.
+    * Acceleration function bug fixed
+
+
+======================================================
               MX-64 Version / 36
 ======================================================
 

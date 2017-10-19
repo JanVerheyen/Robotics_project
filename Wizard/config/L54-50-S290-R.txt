@@ -1,4 +1,59 @@
 ======================================================
+             L54-50-S290-R Version / 26
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * Communication performance was improved.
+
+>>> Bug fixes: <<<
+
+    * None.
+
+
+======================================================
+             L54-50-S290-R Version / 25
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * None.
+
+>>> Bug fixes: <<<
+
+    * Temperature calculation bug fixed.
+    * Torque enable bug fixed.
+    * Status packet transmission bug fixed.
+    * Position limit parameter bug fixed.
+
+
+======================================================
+             L54-50-S290-R Version / 24
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * Position P Gain(32 -> 250), 
+    * Velocity P Gain(256 -> 412)
+
+>>> Bug fixes: <<<
+
+    * None.
+
+
+======================================================
              L54-50-S290-R Version / 23
 ======================================================
 

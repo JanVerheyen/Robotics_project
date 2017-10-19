@@ -1,4 +1,41 @@
 ======================================================
+             H54-200-S500-R Version / 25
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * Communication performance was improved.
+
+>>> Bug fixes: <<<
+
+    * None.
+
+
+======================================================
+             H54-200-S500-R Version / 24
+======================================================
+
+>>> New functionality/features: <<<
+
+    * None.
+
+>>> Changes: <<<
+
+    * None.
+
+>>> Bug fixes: <<<
+
+    * Temperature calculation bug fixed.
+    * Torque enable bug fixed.
+    * Status packet transmission bug fixed.
+    * Position limit parameter bug fixed.
+
+
+======================================================
              H54-200-S500-R Version / 23
 ======================================================
 
