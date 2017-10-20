@@ -143,5 +143,5 @@ def computer(matrix,firstmove):
         
     nextmove = move_picker(score,max_loops,firstmove)
     matrix[nextmove[0]][nextmove[1]] = firstmove
-    return matrix
+    return nextmove
     

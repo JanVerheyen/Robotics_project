@@ -79,18 +79,18 @@ def initialise_zones(hor_line_lim,ver_line_lim,ttt_gray):
                     zone[x][y][i][j] = ttt_gray[i+hor_line_lim[x*2]][j+ver_line_lim[y*2]]
     return zone      
 
-def write_position(average,text):
+def write_position(average,game_matrix):
     #filter out previously written values (so you dont check them twice)
     average_filtered = np.ones((3,3))
     for i in xrange(3):
         for j in xrange(3):
-            if text[i][j] == 5:
+            if game_matrix[i][j] == 5:
                 average_filtered[i][j] = average[i][j]
     #search in the array where the minimum is and return index 
     index = average_filtered.argmax()
     x = index/3
     y = index%3  
-    pos = text
+    pos = game_matrix
     pos[x][y] = 1
     
     return pos
@@ -98,7 +98,7 @@ def write_position(average,text):
          
 #---------------------------------MAIN PROGRAM---------------------------
 
-def find_move(image_name):
+def find_move(image_name,game_matrix):
     #get greyscale array of picture
     ttt_gray = load_image(image_name)
     
@@ -112,12 +112,8 @@ def find_move(image_name):
     zone_contrast = np.ones((3,3))
     zone_contrast = contrast(zone)
     
-    #read the previous move
-    text = np.genfromtxt("positions.txt",dtype = int,delimiter = ",")
-    
-    #convert averages into written or empty entries
+    #convert contrast into written entries
     pos = np.empty((3,3),dtype = int)
-    pos = write_position(zone_contrast,text)
+    pos = write_position(zone_contrast,game_matrix)
     
-    #save the present move to a textfile
-    np.savetxt("positions.txt",pos,delimiter = ",")
+    return pos
