@@ -1,7 +1,6 @@
 import random
 import numpy as np
 
-
 def wincheck(matrix_test):
     saveX = np.zeros((3,3))
     saveO = np.zeros((3,3))
@@ -100,9 +99,9 @@ def move_picker(score,max_loops,firstmove):
         if score[i][2] == 3:
             player1[score[i][0]][score[i][1]] += 1
             player0[score[i][0]][score[i][1]] += 1
-    if firstmove = 0:
+    if firstmove == 0:
         best = max_position(player0)
-    if firstmove = 1:
+    if firstmove == 1:
         best = max_position(player1)
     return best
     
@@ -140,8 +139,9 @@ def computer(matrix,firstmove):
             first_time += 1
         score[counter][2] = winner
         counter += 1
-        
+
     nextmove = move_picker(score,max_loops,firstmove)
     matrix[nextmove[0]][nextmove[1]] = firstmove
     return nextmove
+
     

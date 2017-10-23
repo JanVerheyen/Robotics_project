@@ -1,12 +1,7 @@
 import cv2
-import imutils
-
-def rotate_image(image):
-    rotated = imutils.rotate_bound(image, 180)
-    return rotated
 
 def take_picture():    
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(2)
     ramp_frames = 30
     
     ret, frame = cap.read()
@@ -14,11 +9,11 @@ def take_picture():
     for i in range(ramp_frames):
         ret, temp = cap.read()
     
-    ret, frame = cap.read()
+    ret, image = cap.read()
+
+    frame = image[46:440,118:520]
     
-    frame = rotate_image(frame)
-    
-    cv2.imwrite('Pictures/test.png',frame)
+    cv2.imwrite('Pictures/test15.png',frame)
     
     # Release everything if job is finished
-    cap.release() 
+    cap.release()
