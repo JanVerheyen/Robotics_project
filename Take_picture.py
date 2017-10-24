@@ -13,7 +13,9 @@ def take_picture():
 
     frame = image[46:440,118:520]
     
-    cv2.imwrite('Pictures/test15.png',frame)
+    cv2.imwrite('Pictures/test.png',frame)
     
     # Release everything if job is finished
     cap.release()
+
+take_picture()

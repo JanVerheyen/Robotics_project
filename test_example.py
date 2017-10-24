@@ -6,6 +6,7 @@
 import dynamixel
 import time
 import math
+import sys
 
 settings={}
 settings['port']="COM3"
@@ -160,7 +161,7 @@ def Position(X,Y,Z):
         
 ###########################################
 
-def SetX(a,b):
+def SetX(b,a):
         c=2-b
         xd=22
         Position(138,0,220)
@@ -182,7 +183,7 @@ def SetX(a,b):
         time.sleep(0.3)
         Position(138,0,220)
 
-def SetO(a,b):
+def SetO(b,a):
         c=2-b
         xd=22
         Position(138,0,220)
