@@ -6,10 +6,9 @@
 import dynamixel
 import time
 import math
-import sys
 
 settings={}
-settings['port']="COM3"
+settings['port']="COM7"
 settings['baudRate']=1000000
 highestServoId= 10
 settings['highestServoId']=highestServoId
@@ -95,7 +94,7 @@ phi2=0
 
 
 #Constants
-vmax=60
+vmax=30
 
 #### POSITION FUNCTION #####################################
 
@@ -259,7 +258,7 @@ def DrawGrid():
         u=25
         Position(138,0,220)
         Position(103,-15,u)
-        time.sleep(1)
+        time.sleep(0.5)
         Position(103,-15,d)
         Position(103,20,d)
         Position(103,55,d)
@@ -268,10 +267,9 @@ def DrawGrid():
         Position(103,160,d)
         Position(103,195,d)
         Position(103,195,u)
-        time.sleep(0.3)
 
         Position(173,-15,u)
-        time.sleep(0.8)
+        time.sleep(0.5)
         Position(173,-15,d)
         Position(173,20,d)
         Position(173,55,d)
@@ -280,30 +278,28 @@ def DrawGrid():
         Position(173,160,d)
         Position(173,195,d)
         Position(173,195,u)
-        time.sleep(0.3)
-        
-        Position(33,125,u)
-        time.sleep(0.8)
-        Position(33,125,d)
-        Position(68,125,d)
-        Position(103,125,d)
-        Position(138,125,d)
-        Position(173,125,d)
-        Position(208,125,d)
-        Position(243,125,d)
-        Position(243,125,u)
-        time.sleep(0.3)
-        
-        Position(33,55,u)
-        time.sleep(0.8)
-        Position(33,55,d)
-        Position(68,55,d)
-        Position(103,55,d)
-        Position(138,55,d)
-        Position(173,55,d)
-        Position(208,55,d)
-        Position(243,55,d)
-        Position(243,55,u)
-        time.sleep(0.3)
-        
+
+        Position(125,33,u)
+        time.sleep(0.5)
+        Position(125,33,d)
+        Position(125,68,d)
+        Position(125,103,d)
+        Position(125,138,d)
+        Position(125,173,d)
+        Position(125,208,d)
+        Position(125,243,d)
+        Position(125,243,u)
+
+        Position(55,33,u)
+        time.sleep(0.5)
+        Position(55,33,d)
+        Position(55,68,d)
+        Position(55,103,d)
+        Position(55,138,d)
+        Position(55,173,d)
+        Position(55,208,d)
+        Position(55,243,d)
+        Position(55,243,u)
+
         Position(138,0,220)
+
