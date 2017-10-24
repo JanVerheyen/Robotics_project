@@ -6,9 +6,10 @@
 import dynamixel
 import time
 import math
+import sys
 
 settings={}
-settings['port']="COM7"
+settings['port']="COM3"
 settings['baudRate']=1000000
 highestServoId= 10
 settings['highestServoId']=highestServoId
@@ -94,7 +95,7 @@ phi2=0
 
 
 #Constants
-vmax=30
+vmax=60
 
 #### POSITION FUNCTION #####################################
 
@@ -217,7 +218,60 @@ def SetO(b,a):
         Position(a*70+68+0.26 ,c*70+20-0.97*xd, 8)
         Position(a*70+68+0.5*xd ,c*70+20-0.87*xd, 25)
         Position(138,0,220)
+def DrawGrid():
+        d=8
+        u=25
+        Position(138,0,220)
+        Position(103,-15,u)
+        time.sleep(0.5)
+        Position(103,-15,d)
+        Position(103,20,d)
+        Position(103,55,d)
+        Position(103,90,d)
+        Position(103,125,d)
+        Position(103,160,d)
+        Position(103,195,d)
+        Position(103,195,u)
+        time.sleep(0.5)
 
+        Position(173,-15,u)
+        time.sleep(0.5)
+        Position(173,-15,d)
+        Position(173,20,d)
+        Position(173,55,d)
+        Position(173,90,d)
+        Position(173,125,d)
+        Position(173,160,d)
+        Position(173,195,d)
+        Position(173,195,u)
+        time.sleep(0.5)
+# first -5 last -5
+        Position(28,125,u)
+        time.sleep(0.5)
+        Position(28,124,d)
+        Position(68,123,d)
+        Position(103,122,d)
+        Position(138,121,d)
+        Position(173,122,d)
+        Position(208,123,d)
+        Position(238,124,d)
+        Position(238,125,u)
+        time.sleep(0.5)
+
+        Position(28,55,u)
+        time.sleep(0.5)
+        Position(28,54,d)
+        Position(68,53,d)
+        Position(103,52,d)
+        Position(138,51,d)
+        Position(173,52,d)
+        Position(208,53,d)
+        Position(238,54,d)
+        Position(238,55,u)
+        time.sleep(0.5)
+
+        Position(138,0,220)
+""""
 def SetChineseThing():
         d=8
         u=25
@@ -258,7 +312,7 @@ def DrawGrid():
         u=25
         Position(138,0,220)
         Position(103,-15,u)
-        time.sleep(0.5)
+        time.sleep(1)
         Position(103,-15,d)
         Position(103,20,d)
         Position(103,55,d)
@@ -267,9 +321,10 @@ def DrawGrid():
         Position(103,160,d)
         Position(103,195,d)
         Position(103,195,u)
+        time.sleep(0.3)
 
         Position(173,-15,u)
-        time.sleep(0.5)
+        time.sleep(0.8)
         Position(173,-15,d)
         Position(173,20,d)
         Position(173,55,d)
@@ -278,28 +333,31 @@ def DrawGrid():
         Position(173,160,d)
         Position(173,195,d)
         Position(173,195,u)
-
-        Position(125,33,u)
-        time.sleep(0.5)
-        Position(125,33,d)
-        Position(125,68,d)
-        Position(125,103,d)
-        Position(125,138,d)
-        Position(125,173,d)
-        Position(125,208,d)
-        Position(125,243,d)
-        Position(125,243,u)
-
-        Position(55,33,u)
-        time.sleep(0.5)
-        Position(55,33,d)
-        Position(55,68,d)
-        Position(55,103,d)
-        Position(55,138,d)
-        Position(55,173,d)
-        Position(55,208,d)
-        Position(55,243,d)
-        Position(55,243,u)
-
+        time.sleep(0.3)
+        
+        Position(33,125,u)
+        time.sleep(0.8)
+        Position(33,125,d)
+        Position(68,125,d)
+        Position(103,125,d)
+        Position(138,125,d)
+        Position(173,125,d)
+        Position(208,125,d)
+        Position(243,125,d)
+        Position(243,125,u)
+        time.sleep(0.3)
+        
+        Position(33,55,u)
+        time.sleep(0.8)
+        Position(33,55,d)
+        Position(68,55,d)
+        Position(103,55,d)
+        Position(138,55,d)
+        Position(173,55,d)
+        Position(208,55,d)
+        Position(243,55,d)
+        Position(243,55,u)
+        time.sleep(0.3)
+        
         Position(138,0,220)
-
+"""
