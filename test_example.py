@@ -268,9 +268,10 @@ def DrawGrid():
         Position(103,160,d)
         Position(103,195,d)
         Position(103,195,u)
+        time.sleep(0.3)
 
         Position(173,-15,u)
-        time.sleep(0.5)
+        time.sleep(0.8)
         Position(173,-15,d)
         Position(173,20,d)
         Position(173,55,d)
@@ -279,9 +280,10 @@ def DrawGrid():
         Position(173,160,d)
         Position(173,195,d)
         Position(173,195,u)
-
+        time.sleep(0.3)
+        
         Position(33,125,u)
-        time.sleep(0.5)
+        time.sleep(0.8)
         Position(33,125,d)
         Position(68,125,d)
         Position(103,125,d)
@@ -290,16 +292,18 @@ def DrawGrid():
         Position(208,125,d)
         Position(243,125,d)
         Position(243,125,u)
-
+        time.sleep(0.3)
+        
         Position(33,55,u)
-        time.sleep(0.5)
+        time.sleep(0.8)
         Position(33,55,d)
-        Position(68,d)
+        Position(68,55,d)
         Position(103,55,d)
         Position(138,55,d)
         Position(173,55,d)
         Position(208,55,d)
         Position(243,55,d)
         Position(243,55,u)
-
+        time.sleep(0.3)
+        
         Position(138,0,220)
