@@ -147,12 +147,12 @@ def Position(X,Y,Z):
 
     net.synchronize()
     #PRINT
-    print "Servo 1 end position ", S1g
-    print "Servo 1 velocity     ", S1s
-    print "Servo 2 end position ", S2g
-    print "Servo 2 velocity     ", S2s
-    print t
-    time.sleep(t)
+    #print "Servo 1 end position ", S1g
+    #print "Servo 1 velocity     ", S1s
+    #print "Servo 2 end position ", S2g
+    #print "Servo 2 velocity     ", S2s
+    #print t
+    time.sleep(t-0.1)
     Xold=X
     Yold=Y
     A1old=A1
@@ -161,205 +161,57 @@ def Position(X,Y,Z):
 ###########################################
 
 def SetX(a,b):
+        c=2-b
         xd=22
         Position(138,0,220)
-        Position(a*70+68-xd ,b*70+20-xd, 25)
+        Position(a*70+68-xd ,c*70+20-xd, 25)
         time.sleep(1.1)
-        Position(a*70+68-xd ,b*70+20-xd, 5)
+        Position(a*70+68-xd ,c*70+20-xd, 5)
         time.sleep(0.3)
-        Position(a*70+68+xd ,b*70+20+xd, 5)
+        Position(a*70+68+xd ,c*70+20+xd, 5)
         time.sleep(0.3)
-        Position(a*70+68+xd ,b*70+20+xd, 25)
+        Position(a*70+68+xd ,c*70+20+xd, 25)
         time.sleep(0.3)
-        Position(a*70+68-xd ,b*70+20+xd, 25)
+        Position(a*70+68+xd ,c*70+20-xd, 25)
         time.sleep(0.3)
-        Position(a*70+68-xd ,b*70+20+xd, 5)
+        Position(a*70+68+xd ,c*70+20-xd, 5)
         time.sleep(0.3)
-        Position(a*70+68+xd ,b*70+20-xd, 5)
+        Position(a*70+68-xd ,c*70+20+xd, 5)
         time.sleep(0.3)
-        Position(a*70+68+xd ,b*70+20-xd, 25)
+        Position(a*70+68-xd ,c*70+20+xd, 25)
         time.sleep(0.3)
         Position(138,0,220)
 
 def SetO(a,b):
+        c=2-b
         xd=22
         Position(138,0,220)
-        Position(a*70+68 ,b*70+20-xd, 25)
+        Position(a*70+68 ,c*70+20-xd, 25)
         time.sleep(0.8)
-        Position(a*70+68 ,b*70+20-xd, 5)
-        Position(a*70+68+0.5*xd ,b*70+20-0.87*xd, 5)
-        Position(a*70+68+0.87*xd ,b*70+20-0.5*xd, 5)
-        Position(a*70+68+xd ,b*70+20, 5)
-        Position(a*70+68+0.87*xd ,b*70+20+0.5*xd, 5)
-        Position(a*70+68+0.5*xd ,b*70+20+0.87*xd, 5)
-        Position(a*70+68 ,b*70+20+xd, 5)
-        Position(a*70+68-0.5*xd ,b*70+20+0.87*xd, 5)
-        Position(a*70+68-0.87*xd ,b*70+20+0.5*xd, 5)
-        Position(a*70+68-1*xd ,b*70+20, 5)
-        Position(a*70+68-0.87*xd ,b*70+20-0.5*xd, 5)
-        Position(a*70+68-0.5*xd ,b*70+20-0.87*xd, 5)
-        Position(a*70+68 ,b*70+20-xd, 5)
-        Position(a*70+68-xd ,b*70+20, 25)
+        Position(a*70+68 ,c*70+20-xd, 5)
+        Position(a*70+68+0.26*xd ,c*70+20-0.97xd, 5)
+        Position(a*70+68+0.5*xd ,c*70+20-0.87*xd, 5)
+        Position(a*70+68+0.71*xd ,c*70+20-0.71*xd, 5)
+        Position(a*70+68+0.87*xd ,c*70+20-0.5*xd, 5)
+        Position(a*70+68+0.97*xd ,c*70+20-0.26*xd, 5)
+        Position(a*70+68+xd ,c*70+20, 5)
+        Position(a*70+68+0.97*xd ,c*70+20+0.26*xd, 5)
+        Position(a*70+68+0.87*xd ,c*70+20+0.5*xd, 5)
+        Position(a*70+68+0.71*xd ,c*70+20+0.71*xd, 5)
+        Position(a*70+68+0.5*xd ,c*70+20+0.87*xd, 5)
+        Position(a*70+68+0.26*xd ,c*70+20+0.97*xd, 5)
+        Position(a*70+68 ,c*70+20+xd, 5)
+        Position(a*70+68-0.26*xd ,c*70+20+0.96*xd, 5)
+        Position(a*70+68-0.5*xd ,c*70+20+0.87*xd, 5)
+        Position(a*70+68-0.71*xd ,c*70+20+0.71*xd, 5)
+        Position(a*70+68-0.87*xd ,c*70+20+0.5*xd, 5)
+        Position(a*70+68-0.97*xd ,c*70+20+0.26*xd, 5)
+        Position(a*70+68-1*xd ,c*70+20, 5)
+        Position(a*70+68-0.97*xd ,c*70+20-0.26*xd, 5)
+        Position(a*70+68-0.87*xd ,c*70+20-0.5*xd, 5)
+        Position(a*70+68-0.71*xd ,c*70+20-0.71*xd, 5)
+        Position(a*70+68-0.5*xd ,c*70+20-0.87*xd, 5)
+        Position(a*70+68-0.26*xd ,c*70+20-0.97*xd, 5)
+        Position(a*70+68 ,c*70+20-xd, 5)
+        Position(a*70+68 ,c*70+20-xd, 25)
         Position(138,0,220)
-
-SetO(1,1)
-SetO(2,2)
-SetO(0,0)
-SetO(0,2)
-SetO(1,2)
-SetX(2,0)
-SetX(1,0)
-SetX(2,1)
-SetX(0,1)
-SetX(1,1)
-SetX(2,2)
-SetX(0,0)
-SetX(0,2)
-SetX(1,2)
-SetX(2,0)
-SetX(1,0)
-SetX(2,1)
-SetX(0,1)
-SetX(1,1)
-SetX(2,2)
-SetX(0,0)
-SetX(0,2)
-SetX(1,2)
-SetX(2,0)
-SetX(1,0)
-SetX(2,1)
-SetX(0,1)
-SetX(1,1)
-SetX(2,2)
-SetX(0,0)
-SetX(0,2)
-SetX(1,2)
-SetX(2,0)
-SetX(1,0)
-SetX(2,1)
-SetX(0,1)
-SetX(1,1)
-SetX(2,2)
-SetX(0,0)
-SetX(0,2)
-SetX(1,2)
-SetX(2,0)
-SetX(1,0)
-SetX(2,1)
-SetX(0,1)
-SetX(1,1)
-SetX(2,2)
-SetX(0,0)
-SetX(0,2)
-SetX(1,2)
-SetX(2,0)
-SetX(1,0)
-SetX(2,1)
-SetX(0,1)
-
-
-
-
-
-""""
-def Position(X,Y,Z):
-####################################MOVEMENT####################################
-#Variables
-d=0
-t=0
-
-x=130
-y=0
-
-X=0
-Y=0
-Z=0
-
-Xold=0
-Yold=0
-
-A1=0
-A2=0
-A1old=0
-A2old=0
-
-dA1=0
-dA2=0
-
-S1v=0
-S2v=0
-
-S1s=0
-S2s=0
-
-theta1=0
-theta2=0
-phi1=0
-phi2=0
-#Constants
-vmax=300
-
-#Constants
-vmax=100
-while 1:
-    #Save old position values
-    Xold=X
-    Yold=Y
-    A1old=A1
-    A2old=A2
-
-    #Get input
-#    X=input('input X')
-#    Y=input('input Y')
-#    Z=input('input Z') 
-    
-    #Change coordinate system
-    x=X-65
-    y=Y+130
-
-#DETERMINE POSITION    
-    #Calculate angles
-    theta1 = math.atan2(y,x)/math.pi*180
-    phi1   = math.acos((x**2+y**2-29400)/(350*math.sqrt(x**2+y**2)))/math.pi*180
-    theta2 = math.atan2(y,x-130)/math.pi*180
-    phi2   = math.acos(((x-130)**2+y**2-29400)/(350*math.sqrt((x-130)**2+y**2)))/math.pi*180
-
-    #Total angle
-    A1=theta1+phi1
-    A2=theta2-phi2
-
-    #Servo position
-    S1g=int((A1+60)*1024/300)
-    S2g=int((A2+60)*1024/300)
-    S1.goal_position = S1g
-    S2.goal_position = S2g   
-
-#DETERMINE VELOCITY
-    #Travel time
-    d=math.sqrt((X-Xold)**2+(Y-Yold)**2)
-    t=d/vmax
-
-    #Angular velocity
-    dA1=abs(A1-A1old)
-    
-    dA2=abs(A2-A2old)
-    S1s=int(dA1*3/(t+0.0001))
-    S2s=int(dA2*3/(t+0.0001))
-    S1.moving_speed = S1s
-    S2.moving_speed = S2s
-
-#Z POSITION STUFF
-    S3g=int(512+Z)
-    S4g=int(512-Z)
-    S3.goal_position = S3g
-    S4.goal_position = S4g
-
-    net.synchronize()
-#PRINT
-    print "Servo 1 end position ", S1g
-    print "Servo 1 velocity     ", S1s
-    print "Servo 2 end position ", S2g
-    print "Servo 2 velocity     ", S2s
-    print t
-    time.sleep(t)
-"""       
