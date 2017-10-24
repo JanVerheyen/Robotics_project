@@ -8,7 +8,7 @@ import time
 import math
 
 settings={}
-settings['port']="COM7"
+settings['port']="COM3"
 settings['baudRate']=1000000
 highestServoId= 10
 settings['highestServoId']=highestServoId
@@ -152,7 +152,7 @@ def Position(X,Y,Z):
     #print "Servo 2 end position ", S2g
     #print "Servo 2 velocity     ", S2s
     #print t
-    time.sleep(t-0.1)
+    time.sleep(t)
     Xold=X
     Yold=Y
     A1old=A1
@@ -186,10 +186,11 @@ def SetO(a,b):
         c=2-b
         xd=22
         Position(138,0,220)
-        Position(a*70+68-0.26*xd ,c*70+20-0.97*xd, 25)
+        Position(a*70+68-0.5*xd ,c*70+20-0.87*xd, 25)
         time.sleep(0.8)
+        Position(a*70+68-0.26*xd ,c*70+20-0.97*xd, 8)
         Position(a*70+68 ,c*70+20-xd, 8)
-        Position(a*70+68+0.26*xd ,c*70+20-0.97xd, 8)
+        Position(a*70+68+0.26*xd ,c*70+20-0.97*xd, 8)
         Position(a*70+68+0.5*xd ,c*70+20-0.87*xd, 8)
         Position(a*70+68+0.71*xd ,c*70+20-0.71*xd, 8)
         Position(a*70+68+0.87*xd ,c*70+20-0.5*xd, 8)
@@ -201,7 +202,7 @@ def SetO(a,b):
         Position(a*70+68+0.5*xd ,c*70+20+0.87*xd, 8)
         Position(a*70+68+0.26*xd ,c*70+20+0.97*xd, 8)
         Position(a*70+68 ,c*70+20+xd, 8)
-        Position(a*70+68-0.26*xd ,c*70+20+0.96*xd, 8)
+        Position(a*70+68-0.26*xd ,c*70+20+0.97*xd, 8)
         Position(a*70+68-0.5*xd ,c*70+20+0.87*xd, 8)
         Position(a*70+68-0.71*xd ,c*70+20+0.71*xd, 8)
         Position(a*70+68-0.87*xd ,c*70+20+0.5*xd, 8)
@@ -213,5 +214,6 @@ def SetO(a,b):
         Position(a*70+68-0.5*xd ,c*70+20-0.87*xd, 8)
         Position(a*70+68-0.26*xd ,c*70+20-0.97*xd, 8)
         Position(a*70+68 ,c*70+20-xd, 8)
-        Position(a*70+68+0.26 ,c*70+20-0.97*xd, 25)
+        Position(a*70+68+0.26 ,c*70+20-0.97*xd, 8)
+        Position(a*70+68+0.5*xd ,c*70+20-0.87*xd, 25)
         Position(138,0,220)
