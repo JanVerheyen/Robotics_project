@@ -9,7 +9,7 @@ import math
 import sys
 
 settings={}
-settings['port']="COM3"
+settings['port']="COM7"
 settings['baudRate']=1000000
 highestServoId= 10
 settings['highestServoId']=highestServoId
@@ -162,69 +162,76 @@ def Position(X,Y,Z):
 ###########################################
 
 def SetX(b,a):
+        d=3
         c=2-b
         xd=22
-        Position(138,0,220)
+        Position(138,0,200)
         Position(a*70+68-xd ,c*70+20-xd, 25)
         time.sleep(1.1)
-        Position(a*70+68-xd ,c*70+20-xd, 8)
+        Position(a*70+68-xd ,c*70+20-xd, d)
+        time.sleep(0.5)#
         time.sleep(0.3)
-        Position(a*70+68+xd ,c*70+20+xd, 8)
+        Position(a*70+68+xd ,c*70+20+xd, d)
         time.sleep(0.3)
         Position(a*70+68+xd ,c*70+20+xd, 25)
         time.sleep(0.3)
         Position(a*70+68+xd ,c*70+20-xd, 25)
         time.sleep(0.3)
-        Position(a*70+68+xd ,c*70+20-xd, 8)
+        Position(a*70+68+xd ,c*70+20-xd, d)
+        time.sleep(0.5)#
         time.sleep(0.3)
-        Position(a*70+68-xd ,c*70+20+xd, 8)
+        Position(a*70+68-xd ,c*70+20+xd, d)
         time.sleep(0.3)
         Position(a*70+68-xd ,c*70+20+xd, 25)
         time.sleep(0.3)
-        Position(138,0,220)
+        Position(138,0,200)
 
 def SetO(b,a):
+        d=3
         c=2-b
         xd=22
-        Position(138,0,220)
+        Position(138,0,200)
         Position(a*70+68-0.5*xd ,c*70+20-0.87*xd, 25)
-        time.sleep(0.8)
-        Position(a*70+68-0.26*xd ,c*70+20-0.97*xd, 8)
-        Position(a*70+68 ,c*70+20-xd, 8)
-        Position(a*70+68+0.26*xd ,c*70+20-0.97*xd, 8)
-        Position(a*70+68+0.5*xd ,c*70+20-0.87*xd, 8)
-        Position(a*70+68+0.71*xd ,c*70+20-0.71*xd, 8)
-        Position(a*70+68+0.87*xd ,c*70+20-0.5*xd, 8)
-        Position(a*70+68+0.97*xd ,c*70+20-0.26*xd, 8)
-        Position(a*70+68+xd ,c*70+20, 8)
-        Position(a*70+68+0.97*xd ,c*70+20+0.26*xd, 8)
-        Position(a*70+68+0.87*xd ,c*70+20+0.5*xd, 8)
-        Position(a*70+68+0.71*xd ,c*70+20+0.71*xd, 8)
-        Position(a*70+68+0.5*xd ,c*70+20+0.87*xd, 8)
-        Position(a*70+68+0.26*xd ,c*70+20+0.97*xd, 8)
-        Position(a*70+68 ,c*70+20+xd, 8)
-        Position(a*70+68-0.26*xd ,c*70+20+0.97*xd, 8)
-        Position(a*70+68-0.5*xd ,c*70+20+0.87*xd, 8)
-        Position(a*70+68-0.71*xd ,c*70+20+0.71*xd, 8)
-        Position(a*70+68-0.87*xd ,c*70+20+0.5*xd, 8)
-        Position(a*70+68-0.97*xd ,c*70+20+0.26*xd, 8)
-        Position(a*70+68-1*xd ,c*70+20, 8)
-        Position(a*70+68-0.97*xd ,c*70+20-0.26*xd, 8)
-        Position(a*70+68-0.87*xd ,c*70+20-0.5*xd, 8)
-        Position(a*70+68-0.71*xd ,c*70+20-0.71*xd, 8)
-        Position(a*70+68-0.5*xd ,c*70+20-0.87*xd, 8)
-        Position(a*70+68-0.26*xd ,c*70+20-0.97*xd, 8)
-        Position(a*70+68 ,c*70+20-xd, 8)
-        Position(a*70+68+0.26 ,c*70+20-0.97*xd, 8)
+        time.sleep(1.2)
+        Position(a*70+68-0.26*xd ,c*70+20-0.97*xd, d)
+        time.sleep(0.5)#
+        Position(a*70+68 ,c*70+20-xd, d)
+        Position(a*70+68+0.26*xd ,c*70+20-0.97*xd, d)
+        Position(a*70+68+0.5*xd ,c*70+20-0.87*xd, d)
+        Position(a*70+68+0.71*xd ,c*70+20-0.71*xd, d)
+        Position(a*70+68+0.87*xd ,c*70+20-0.5*xd, d)
+        Position(a*70+68+0.97*xd ,c*70+20-0.26*xd, d)
+        Position(a*70+68+xd ,c*70+20, d)
+        Position(a*70+68+0.97*xd ,c*70+20+0.26*xd, d)
+        Position(a*70+68+0.87*xd ,c*70+20+0.5*xd, d)
+        Position(a*70+68+0.71*xd ,c*70+20+0.71*xd, d)
+        Position(a*70+68+0.5*xd ,c*70+20+0.87*xd, d)
+        Position(a*70+68+0.26*xd ,c*70+20+0.97*xd, d)
+        Position(a*70+68 ,c*70+20+xd, d)
+        Position(a*70+68-0.26*xd ,c*70+20+0.97*xd, d)
+        Position(a*70+68-0.5*xd ,c*70+20+0.87*xd, d)
+        Position(a*70+68-0.71*xd ,c*70+20+0.71*xd, d)
+        Position(a*70+68-0.87*xd ,c*70+20+0.5*xd, d)
+        Position(a*70+68-0.97*xd ,c*70+20+0.26*xd, d)
+        Position(a*70+68-1*xd ,c*70+20, d)
+        Position(a*70+68-0.97*xd ,c*70+20-0.26*xd, d)
+        Position(a*70+68-0.87*xd ,c*70+20-0.5*xd, d)
+        Position(a*70+68-0.71*xd ,c*70+20-0.71*xd, d)
+        Position(a*70+68-0.5*xd ,c*70+20-0.87*xd, d)
+        Position(a*70+68-0.26*xd ,c*70+20-0.97*xd, d)
+        Position(a*70+68 ,c*70+20-xd, d)
+        Position(a*70+68+0.26 ,c*70+20-0.97*xd, d)
         Position(a*70+68+0.5*xd ,c*70+20-0.87*xd, 25)
-        Position(138,0,220)
+        Position(138,0,200)
 def DrawGrid():
         d=8
         u=25
         Position(138,0,220)
         Position(103,-15,u)
-        time.sleep(0.5)
+        
+        time.sleep(1.1)
         Position(103,-15,d)
+        time.sleep(0.5) #
         Position(103,20,d)
         Position(103,55,d)
         Position(103,90,d)
@@ -237,6 +244,7 @@ def DrawGrid():
         Position(173,-15,u)
         time.sleep(0.5)
         Position(173,-15,d)
+        time.sleep(0.5) #
         Position(173,20,d)
         Position(173,55,d)
         Position(173,90,d)
@@ -245,12 +253,14 @@ def DrawGrid():
         Position(173,195,d)
         Position(173,195,u)
         time.sleep(0.5)
+
 # first -5 last -5
-        Position(28,125,u)
+        Position(28,124,u)
         time.sleep(0.5)
-        Position(28,124,d)
-        Position(68,123,d)
-        Position(103,122,d)
+        Position(28,123,d)
+        Position(88,122,d)
+        time.sleep(0.5) #
+        Position(103,121,d)
         Position(138,121,d)
         Position(173,122,d)
         Position(208,123,d)
@@ -258,20 +268,29 @@ def DrawGrid():
         Position(238,125,u)
         time.sleep(0.5)
 
-        Position(28,55,u)
-        time.sleep(0.5)
-        Position(28,54,d)
-        Position(68,53,d)
-        Position(103,52,d)
-        Position(138,51,d)
-        Position(173,52,d)
-        Position(208,53,d)
-        Position(238,54,d)
         Position(238,55,u)
         time.sleep(0.5)
-
+        Position(238,54,d)
+        time.sleep(0.5)
+        Position(208,53,d)
+        Position(173,52,d)
+        Position(138,51,d)
+        Position(103,52,d)
+        Position(68,53,d)
+        Position(28,57,d)
+        Position(28,59,u)
+        time.sleep(0.5)
         Position(138,0,220)
-""""
+
+
+DrawGrid()
+"""
+for i in range(3):
+        for j in range(3):
+                SetX(i,j)
+                SetO(i,j)
+
+
 def SetChineseThing():
         d=8
         u=25
