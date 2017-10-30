@@ -9,7 +9,7 @@ import math
 import sys
 
 settings={}
-settings['port']="COM7"
+settings['port']="COM3"
 settings['baudRate']=1000000
 highestServoId= 10
 settings['highestServoId']=highestServoId
@@ -284,7 +284,7 @@ def DrawGrid():
 
 def Victory(c,w):
         if c==0:
-                if w==1:
+                if w==2:
                         #Victory
                         Position(138,0,180)
                         time.sleep(0.5)
@@ -303,14 +303,40 @@ def Victory(c,w):
                         
 
 
-                if w==2:
+                if w==1:
                         #Lost
 
                 if w==3:
+                        """"
                         #Draw
+                        Position(138,50,25)
+                        Position(138,50,3)
+                        time.wait(0.5)
+                        Position(88,100,3)
+                        Position(88,150,3)
+                        Position(138,150,3)
+                        Position(188,150,3)
+                        Position(188,100,3)
+                        Position(188,50,3)
+                        Position(138,50,3)
+                        Position(138,50,25)
                         
+                        Position(108,70,25)
+                        Position(108,70,3)
+                        time.wait(0.5)
+                        Position(168,70,3)
+                        Position(168,70,25)
+                        Position(113,125,25)
+                        Position(113,125,3)
+                        Position(112,125,3)
+                        Position(113,124,3)
+                        Position(114,125,3)
+                        Position(113,126,3)
+                        Position(113,125,3)
+                        Position(113,125,25)
+                        """" 
         if c==1:
-                if w==2:
+                if w==1:
                         #Victory
                         Position(138,0,180)
                         time.sleep(0.5)
@@ -327,7 +353,7 @@ def Victory(c,w):
                         Position(218,80,180)
                         Position(138,0,180)
 
-                if w==1:
+                if w==2:
                         #Lost
 
                 if w==3:
