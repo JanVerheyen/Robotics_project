@@ -53,8 +53,8 @@ S3 = net.get_dynamixels()[3]
 S4 = net.get_dynamixels()[1]
 S1.goal_position = 746
 S2.goal_position = 248
-S3.goal_position = 732
-S4.goal_position = 292
+S3.goal_position = 702
+S4.goal_position = 322
 net.synchronize()
 time.sleep(3)
 print "ready"
@@ -165,7 +165,7 @@ def SetX(b,a):
         d=3
         c=2-b
         xd=22
-        Position(138,0,200)
+        Position(138,0,180)
         Position(a*70+68-xd ,c*70+20-xd, 25)
         time.sleep(1.1)
         Position(a*70+68-xd ,c*70+20-xd, d)
@@ -184,13 +184,13 @@ def SetX(b,a):
         time.sleep(0.3)
         Position(a*70+68-xd ,c*70+20+xd, 25)
         time.sleep(0.3)
-        Position(138,0,200)
+        Position(138,0,180)
 
 def SetO(b,a):
         d=3
         c=2-b
         xd=22
-        Position(138,0,200)
+        Position(138,0,180)
         Position(a*70+68-0.5*xd ,c*70+20-0.87*xd, 25)
         time.sleep(1.2)
         Position(a*70+68-0.26*xd ,c*70+20-0.97*xd, d)
@@ -222,11 +222,11 @@ def SetO(b,a):
         Position(a*70+68 ,c*70+20-xd, d)
         Position(a*70+68+0.26 ,c*70+20-0.97*xd, d)
         Position(a*70+68+0.5*xd ,c*70+20-0.87*xd, 25)
-        Position(138,0,200)
+        Position(138,0,180)
 def DrawGrid():
-        d=8
+        d=3
         u=25
-        Position(138,0,220)
+        Position(138,0,180)
         Position(103,-15,u)
         
         time.sleep(1.1)
@@ -242,7 +242,7 @@ def DrawGrid():
         time.sleep(0.5)
 
         Position(173,-15,u)
-        time.sleep(0.5)
+        time.sleep(0.3)
         Position(173,-15,d)
         time.sleep(0.5) #
         Position(173,20,d)
@@ -280,11 +280,63 @@ def DrawGrid():
         Position(28,57,d)
         Position(28,59,u)
         time.sleep(0.5)
-        Position(138,0,220)
+        Position(138,0,180)
+
+def Victory(c,w):
+        if c==0:
+                if w==1:
+                        #Victory
+                        Position(138,0,180)
+                        time.sleep(0.5)
+                        Position(58,80,180)
+                        Position(138,160,180)
+                        Position(218,80,180)
+                        Position(138,0,180)
+                        Position(58,80,180)
+                        Position(138,160,180)
+                        Position(218,80,180)
+                        Position(138,0,180)
+                        Position(58,80,180)
+                        Position(138,160,180)
+                        Position(218,80,180)
+                        Position(138,0,180)
+                        
 
 
-DrawGrid()
+                if w==2:
+                        #Lost
+
+                if w==3:
+                        #Draw
+                        
+        if c==1:
+                if w==2:
+                        #Victory
+                        Position(138,0,180)
+                        time.sleep(0.5)
+                        Position(58,80,180)
+                        Position(138,160,180)
+                        Position(218,80,180)
+                        Position(138,0,180)
+                        Position(58,80,180)
+                        Position(138,160,180)
+                        Position(218,80,180)
+                        Position(138,0,180)
+                        Position(58,80,180)
+                        Position(138,160,180)
+                        Position(218,80,180)
+                        Position(138,0,180)
+
+                if w==1:
+                        #Lost
+
+                if w==3:
+                        #Draw
+                        
+
 """
+DrawGrid()
+
 for i in range(3):
         for j in range(3):
                 SetX(i,j)
